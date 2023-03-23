@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin> <!--Добавил предзагрузку шрифтов-->
+    <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link rel="stylesheet" href="styles/style.css">
+
+    <title>Онлайн магазин ShopOnline</title>
+</head>
+  
+
+
+<body>
+  <section class="header">
+    <div class="container header__container">
+      <h1 class="header__title visually-hidden">Главная страница онлайн магазина ShopOnline</h1>
+      <img class="header__logo" src="images/logo.png" alt="Логотип онлайн магазина">
+      <button class="header__menu">
+        <svg class="header__menu-logo" width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12H6V10H0V12ZM0 0V2H18V0H0ZM0 7H12V5H0V7Z" fill="white"/>
+        </svg>
+        <span class="header__menu-text">Меню</span>
+      </button>
+      <form action="https://jsonplaceholder.typicode.com/posts" 
+            class="header__search-form" 
+            method="post" 
+            enctype="application/x-www-form-urlencoded"
+      >
+          <input type="text" class="header__search" id="search" placeholder="Я ищу..." name="search-input">
+          <label for="search" class="header__search-label visually-hidden">Поиск</label>
+          <button class="header__search-btn" type="submit">
+            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.25 17H18.065L17.645 16.595C19.115 14.885 20 12.665 20 10.25C20 4.865 15.635 0.5 10.25 0.5C4.865 0.5 0.5 4.865 0.5 10.25C0.5 15.635 4.865 20 10.25 20C12.665 20 14.885 19.115 16.595 17.645L17 18.065V19.25L24.5 26.735L26.735 24.5L19.25 17ZM10.25 17C6.515 17 3.5 13.985 3.5 10.25C3.5 6.515 6.515 3.5 10.25 3.5C13.985 3.5 17 6.515 17 10.25C17 13.985 13.985 17 10.25 17Z" fill="white"/>
+            </svg>
+          </button>
+      </form>
+      <nav class="header__navigation">
+          <ul class="header__list">
+              <li class="header__item">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 18C21.315 18 24 15.315 24 12C24 8.685 21.315 6 18 6C14.685 6 12 8.685 12 12C12 15.315 14.685 18 18 18ZM18 21C13.995 21 6 23.01 6 27V30H30V27C30 23.01 22.005 21 18 21Z" fill="#2D2D2D"/>
+                </svg>
+                <p class="header__item-text">Профиль</p>
+              </li>
+              <li class="header__item">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 27C8.85 27 7.515 28.35 7.515 30C7.515 31.65 8.85 33 10.5 33C12.15 33 13.5 31.65 13.5 30C13.5 28.35 12.15 27 10.5 27ZM1.5 3V6H4.5L9.9 17.385L7.875 21.06C7.635 21.48 7.5 21.975 7.5 22.5C7.5 24.15 8.85 25.5 10.5 25.5H28.5V22.5H11.13C10.92 22.5 10.755 22.335 10.755 22.125L10.8 21.945L12.15 19.5H23.325C24.45 19.5 25.44 18.885 25.95 17.955L31.32 8.22C31.44 8.01 31.5 7.755 31.5 7.5C31.5 6.675 30.825 6 30 6H7.815L6.405 3H1.5ZM25.5 27C23.85 27 22.515 28.35 22.515 30C22.515 31.65 23.85 33 25.5 33C27.15 33 28.5 31.65 28.5 30C28.5 28.35 27.15 27 25.5 27Z" fill="#2D2D2D"/>
+                  <circle cx="29" cy="7" r="7" fill="white"/>
+                  <path d="M31.867 10.39C32.0537 10.39 32.2007 10.4437 32.308 10.551C32.42 10.6537 32.476 10.7913 32.476 10.964V12H25.532V11.426C25.532 11.3093 25.5553 11.188 25.602 11.062C25.6533 10.9313 25.7327 10.8147 25.84 10.712L28.913 7.632C29.1697 7.37067 29.3983 7.121 29.599 6.883C29.8043 6.645 29.9747 6.40933 30.11 6.176C30.2453 5.94267 30.348 5.707 30.418 5.469C30.4927 5.22633 30.53 4.972 30.53 4.706C30.53 4.46333 30.495 4.251 30.425 4.069C30.355 3.88233 30.2547 3.726 30.124 3.6C29.998 3.474 29.844 3.38067 29.662 3.32C29.4847 3.25467 29.284 3.222 29.06 3.222C28.8547 3.222 28.6633 3.25233 28.486 3.313C28.3133 3.369 28.1593 3.45067 28.024 3.558C27.8887 3.66067 27.7743 3.782 27.681 3.922C27.5877 4.062 27.5177 4.216 27.471 4.384C27.3917 4.59867 27.289 4.741 27.163 4.811C27.037 4.881 26.855 4.89733 26.617 4.86L25.707 4.699C25.777 4.21367 25.9123 3.789 26.113 3.425C26.3137 3.05633 26.5633 2.75067 26.862 2.508C27.1653 2.26067 27.5107 2.07633 27.898 1.955C28.29 1.829 28.71 1.766 29.158 1.766C29.6247 1.766 30.0517 1.836 30.439 1.976C30.8263 2.11133 31.1577 2.305 31.433 2.557C31.7083 2.809 31.923 3.11233 32.077 3.467C32.231 3.82167 32.308 4.216 32.308 4.65C32.308 5.02333 32.252 5.36867 32.14 5.686C32.0327 6.00333 31.8857 6.30667 31.699 6.596C31.517 6.88533 31.3023 7.16533 31.055 7.436C30.8077 7.70667 30.5487 7.982 30.278 8.262L27.996 10.593C28.2153 10.5277 28.4323 10.4787 28.647 10.446C28.8663 10.4087 29.074 10.39 29.27 10.39H31.867Z" fill="#3670C7"/>
+                </svg>
+                <p class="header__item-text">Корзина</p>
+              </li>
+              <li class="header__item">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 32.025L15.825 30.045C8.1 23.04 3 18.42 3 12.75C3 8.13 6.63 4.5 11.25 4.5C13.86 4.5 16.365 5.715 18 7.635C19.635 5.715 22.14 4.5 24.75 4.5C29.37 4.5 33 8.13 33 12.75C33 18.42 27.9 23.04 20.175 30.06L18 32.025Z" fill="#2D2D2D"/>
+                </svg>
+                <p class="header__item-text">Избранное</p>
+              </li>
+          </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="container hero__container">
+      <div class="hero__wrap">
+        <h2 class="hero__title visually-hidden">Действующая промо-акция магазина</h2>
+        <p class="hero__promo-text">-50% на все ноутбуки</p>
+        <p class="hero__promo-time-end">До конца акции:</p>
+        <div class="hero__promo-timer">
+          <p class="hero__promo-time"><span class="hero__promo-number">3</span> дня</p>
+          <p class="hero__promo-time"><span class="hero__promo-number">8</span> часов</p>
+          <p class="hero__promo-time"><span class="hero__promo-number">43</span> минуты</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="goods">
+    <div class="container">
+      <h2 class="goods__title visually-hidden">Товары и промоакции интеренет-магазина</h2>
+      <ul class="goods__list">
+        <div class="goods__wrap-2">
+          <div class="goods__wrap-1">
+            <li class="goods__img goods__item--1">
+              <p class="goods__text goods__text--fz-30">Книга – <span class="good__text-regular">лучший подарок</span></p>
+            </li>
+            <li class="goods__img goods__item--2">
+              <p class="goods__text goods__text--fz-30">Время скидок!</p>
+            </li>
+            <li class="goods__img goods__item--3"></li>
+          </div>
+          <li class="goods__img goods__item--4">
+            <div class="goods__text-wrap--blue">
+              <p class="goods__text goods__text--blue">
+                Вторая пара кроссовок <span class="good__text--bold-blue">в подарок!</span>
+              </p>
+            </div>
+          </li>
+        </div>
+        <li class="goods__img goods__item--5">
+          <p class="goods__text">Идеи новогодних подарков</p>
+        </li>
+
+        <li class="goods__img goods__item--6">
+          <p class="goods__text">Выгодно в декабре!</p>
+        </li>
+        <li class="goods__img goods__item--7">
+          <div class="goods__text-wrap">
+            <p class="goods__text goods__text--red">Новогодние украшения</p>
+          </div>
+        </li>
+        <li class="goods__img goods__item--8"></li>
+        <div class="goods__flex-wrap">
+          <li class="goods__img goods__item--9">
+            <p class="goods__text goods__text--fz-30 goods__text--chemicals">На бытовую химию</p>
+          </li>
+          <li class="goods__img goods__item--10"></li>
+        </div>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
