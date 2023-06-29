@@ -8,6 +8,15 @@
     <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
     
     <link rel="stylesheet" href="styles/style.css">
+    <script defer src="script/script.js"></script>
+    <!-- Находит датасет атрибут и запускает таймер по нему -->
+    <script>
+      // реаализует таймер как плагин
+      document.addEventListener('DOMContentLoaded', () => {
+        const serchElem = document.querySelector('[data-deadline]');
+        if(serchElem) setTimer(timerBlock.dataset.deadline);
+      });
+    </script>
 
     <title>Онлайн магазин ShopOnline</title>
 </head>
@@ -71,10 +80,10 @@
         <h2 class="hero__title visually-hidden">Действующая промо-акция магазина</h2>
         <p class="hero__promo-text">-50% на все ноутбуки</p>
         <p class="hero__promo-time-end">До конца акции:</p>
-        <div class="hero__promo-timer">
-          <p class="hero__promo-time"><span class="hero__promo-number">3</span> дня</p>
-          <p class="hero__promo-time"><span class="hero__promo-number">8</span> часов</p>
-          <p class="hero__promo-time"><span class="hero__promo-number">43</span> минуты</p>
+        <div class="hero__promo-timer timer" data-deadline="2023/06/31 13:36">
+          <p class="hero__promo-time timer-day-txt"><span class="hero__promo-number timer-day">3</span> Дней</p>
+          <p class="hero__promo-time timer-hour-txt"><span class="hero__promo-number timer-hour">8</span> Часов</p>
+          <p class="hero__promo-time timer-min-txt"><span class="hero__promo-number timer-min">43</span> Минут</p>
         </div>
       </div>
     </div>
