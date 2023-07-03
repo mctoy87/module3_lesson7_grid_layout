@@ -46,6 +46,16 @@ const setTimer = deadline => {
       return result;
     };
 
+    // делает двузначным часы и минуты
+    const formatTime = (h, min) => {
+      if (min < 10) {
+        min = `0${min}`;
+      }
+      if (h < 10) {
+        h = `0${h}`;
+      }
+    };
+
     timerTextDay.dataset.title = declensionNum(
         days, ['день', 'дня', 'дней']);
     timerTextHour.dataset.title = declensionNum(
@@ -53,13 +63,8 @@ const setTimer = deadline => {
     timerTextMin.dataset.title = declensionNum(
         minutes, ['минута', 'минуты', 'минут']);
 
-    // делает двузначным часы и минуты
-    if (minutes < 10) {
-      minutes = `'0' ${minutes}`;
-    }
-    if (hours < 10) {
-      hours = `'0' ${hours}`;
-    }
+    // меняем на двузначное число часы и минуты
+    formatTime(hours, minutes);
 
     return {timeRemaining, days, minutes, hours};
   };
