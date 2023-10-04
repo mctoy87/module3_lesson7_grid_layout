@@ -3,6 +3,9 @@
 @import url("header.css");
 @import url("hero.css");
 @import url("goods.css");
+@import url("sale.css");
+@import url("footer.css");
+
 
 @font-face {
     font-family: Lato;

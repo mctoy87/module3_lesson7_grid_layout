@@ -1,0 +1,127 @@
+.sale {
+  padding-top: 50px;
+  padding-bottom: 140px;
+  color: var(--3, #2D2D2D);
+}
+
+.sale__title {
+  font-size: 50px;
+  line-height: 130%; /* 65px */
+  margin-bottom: 50px;
+}
+
+.sale__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 420px;
+}
+
+.card__image {
+  margin-bottom: 20px;
+}
+
+.card__price {
+  position: relative;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+/* общие стили для цены до скидки */
+.card__price::after {
+position: absolute;
+
+width: 64px;
+height: 24px;
+left: 117px;
+top: 50%;
+transform: translateY(-50%);
+
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-decoration: line-through;
+}
+
+/* Текст внутри цены со скидкой */
+.card__price_1::after {
+  content: '2598 ₽';
+}
+
+.card__price_2::after {
+  content: '5938 ₽';
+}
+
+.card__price_3::after {
+  content: '4490 ₽';
+}
+
+.card__price_4::after {
+  content: '6030 ₽';
+}
+
+.card__price_5::after {
+  content: '890 ₽';
+}
+/*---*/
+
+.card__text {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+/* Общие стили для штампика со скидкой на картинке */
+.card::before {
+  position: absolute;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+  text-align: center;
+
+  color: var(--1, #FFF);
+
+  top: 187px;
+  left: 20px;
+
+  width: 88px;
+  height: 88px;
+  background-color: #FFBD13;
+  border-radius: 50%;
+  display: flex;              /*Выравнивает скидку внутри :before*/
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+}
+
+.card-1::before {
+  content: "-50%";
+}
+
+.card-2::before {
+  content: "-40%";
+}
+
+.card-3::before {
+  content: "-10%";
+}
+
+.card-4::before {
+  content: "-30%";
+}
+
+.card-5::before {
+  content: "-30%";
+}

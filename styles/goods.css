@@ -1,61 +1,47 @@
 .goods {
     padding-top: 30px;
-    padding-bottom: 140px;
+    padding-bottom: 50px;
 }
 
 .goods__list {
     display: grid;
-    grid-template-columns: 1160px 245px 245px;
-    grid-template-rows: 228px 228px 516px;
+    grid-template-columns: repeat(2, minmax(245px, 1fr)) minmax(550px, 2fr) repeat(2, minmax(245px, 1fr));
+    grid-template-rows: repeat(4, 245px);
     grid-template-areas: 
-        "wrap-2 five five"
-        "wrap-2 six six"
-        "seven eight flex-1"
+        "book time snickers presents presents"
+        "red_boot red_boot snickers tv tv"
+        "new_year new_year new_year girl chemical"
+        "new_year new_year new_year girl balls"
     ;
     gap: 60px;
 }
-
-.goods__wrap-2 {
-    display: grid;
-    grid-area: wrap-2;
-    grid-template-columns: 
-      [one-c-start]
-      550px 
-      [one-c-end two-c-start]
-      516px;
-      [two-c-end];
-    gap: 94px;
-}
-
-.goods__wrap-1 {
-    display: grid;
-    grid-template-columns: 245px 245px;
-    grid-template-rows: 245px 228px;
-    gap: 43px 60px;
-    grid-column: one-c-start / one-c-end;
-}
-
-
+/* общие стили для картинок в ul */
 .goods__img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
 }
 
+/* общие стили для ссылок в ul */
+.goods__link {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+/* общие стили для текста в ul */
 .goods__text {
     font-weight: 700;
     font-size: 40px;
     line-height: 130%;
-
 }
 
 .good__text-regular {
     font-weight: 400;
-}
- 
-.good__text-regular-mb{
-
 }
 
 .goods__text--fz-30 {
@@ -67,6 +53,7 @@
     font-size: 40px;
     line-height: 120%;
 }
+
 .good__text--bold-blue {
     font-weight: 700;
     font-size: 56px;
@@ -93,182 +80,136 @@
     background-color: #FFFFFF;
     border-radius: 20px;    
     text-align: center;
-
 }
 
 .goods__text--red{
     line-height: 120%;
-
     vertical-align: middle;
     text-transform: uppercase;
     color: #F91155;
 }
 
+/* стили для ссылок в айтемах в ul */
+.goods__link_1 {
+    padding: 90px 35px 27px 20px;
+}
+
+.goods__link_2 {
+    padding: 77px 0 0 14px;
+}
+
+.goods__link_4 {
+    padding: 329px 20px 20px;
+}
+
+.goods__link_5 {
+    padding: 94px 180px 0 30px;
+}
+
+.goods__link_6 {
+    padding: 136px 0 0 30px;
+}
+
+.goods__link_7 {
+    padding: 358px 0 0 50px;
+}
+
+.goods__link_9 {
+    padding-left: 20px;
+}
+
+/* Общие стили для штампика со скидкой на картинке */
+.goods__img::before {
+    position: absolute;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 130%;
+    text-align: center;
+  
+    bottom: 20px;
+    right: 27px;
+  
+    width: 88px;
+    height: 88px;
+    background-color: #FFBD13;
+    border-radius: 50%;
+    display: flex;              /*Выравнивает скидку внутри :before*/
+    justify-content: center;
+    align-items: center;
+  }
+
+/* стили для айтемов в ul */
 .goods__item--1{
     background-image: url("../images/book.jpg");
-    background-repeat: no-repeat;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    padding: 90px 35px 27px 20px;
+    grid-area: book;
 }
 
 .goods__item--2 {
     position: relative;
     background-image: url("../images/clock.jpg");
-    background-repeat: no-repeat;
-    grid-column: 2/ 3;
-    grid-row: 1 / 2;
-    padding: 77px 0 0 14px;
+    grid-area: time;
 }
 .goods__item--2::before {
-    position: absolute;
     content: "-25%";
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 130%;
-    text-align: center;
-    bottom: 20px;
-    right: 27px;
-    width: 88px;
-    height: 88px;
-    background-color: #FFBD13;
-    border-radius: 50%;
-    display: flex;              /*Выравнивает скидку внутри :before*/
-    justify-content: center;
-    align-items: center;
 }
-
 
 .goods__item--3 {
     position: relative;
     background-image: url("../images/red_snicker.jpg");
-    background-repeat: no-repeat;
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
+    grid-area: red_boot;
 }
 
 .goods__item--3::before {
-    position: absolute;
     content: "-40%";
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 130%;
-    text-align: center;
-    left: 20px;
     top: 20px;
-    width: 88px;
-    height: 88px;
-    background-color: #FFBD13;
-    border-radius: 50%;
-    display: flex;              /*Выравнивает скидку внутри :before*/
-    justify-content: center;
-    align-items: center;
+    left: 20px;
 }
 
 .goods__item--4 {
     background-image: url("../images/snickers.jpg");
-    background-repeat: no-repeat;
-    grid-column: two-c-start / two-c-end ;
-    padding: 329px 20px 20px;
+    grid-area: snickers;
 }
-
-
 
 .goods__item--5 {
     background-image: url("../images/christmas_present.jpg");
-    background-repeat: no-repeat;
-    grid-area: five;
-    padding: 94px 180px 0 30px;
+    grid-area: presents;
 }
 
 .goods__item--6 {
     position: relative;
     background-image: url("../images/laptop.jpg");
-    background-repeat: no-repeat;
-    grid-area: six;
-    padding: 136px 0 0 30px;
+    grid-area: tv;
 }
 
 .goods__item--6::before {
-    position: absolute;
     content: "-15%";
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 130%;
-    text-align: center;
-    bottom: 20px;
-    right: 20px;
-    width: 88px;
-    height: 88px;
-    background-color: #FFBD13;
-    border-radius: 50%;
-    display: flex;              /*Выравнивает скидку внутри :before*/
-    justify-content: center;
-    align-items: center;
 }
 
 .goods__item--7 {
     background-image: url("../images/2022.jpg");
-    background-repeat: no-repeat;
-    grid-area: seven;
-    padding: 358px 0 0 50px;
+    grid-area: new_year;
 }
 
 .goods__item--8 {
     position: relative;
     background-image: url("../images/girl.jpg");
-    background-repeat: no-repeat;
-    grid-area: eight;
+    grid-area: girl;
 }
 
 .goods__item--8::before {
-    position: absolute;
     content: "-55%";
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 130%;
-    text-align: center;
-    bottom: 20px;
-    right: 20px;
-    width: 88px;
-    height: 88px;
-    background-color: #FFBD13;
-    border-radius: 50%;
-    display: flex;              /*Выравнивает скидку внутри :before*/
-    justify-content: center;
-    align-items: center;
-}
-
-.goods__flex-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-    grid-area: flex-1;
 }
 
 .goods__item--9 {
     position: relative;
     background-image: url("../images/chemicals.jpg");
-    background-repeat: no-repeat;
-    padding-left: 20px;
+    grid-area: chemical;
 }
 
 .goods__item--9::before {
-    position: absolute;
     content: "-25%";
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 130%;
-    text-align: center;
     top: 20px;
     left: 20px;
-    width: 88px;
-    height: 88px;
-    background-color: #FFBD13;
-    border-radius: 50%;
-    display: flex;              /*Выравнивает скидку внутри :before*/
-    justify-content: center;
-    align-items: center;
 }
 
 .goods__text--chemicals{
@@ -278,6 +219,5 @@
 
 .goods__item--10 {
     background-image: url("../images/christmas_balls.jpg");
-    background-repeat: no-repeat;
-
+    grid-area: balls;
 }
